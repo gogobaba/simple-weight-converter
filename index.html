@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <title>Simple Weight Converter</title>
+
+  </head>
+  <body style="background-color:#f6f6f6">
+    <div class="container">
+      <div class="row" style="margin-top: 10%">
+        <div class="col-xlg-6 offset-4">
+          <h1 class="display-4 text-center">Weight Converter</h1>
+            <hr>
+            <form>
+                <div class="form-group">
+                 <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter Pounds....">
+                </div>
+            </form>
+             <div id="output">
+                 
+            <div class="card mb-2" style="background-color: indianred">
+               <div class="card-block">
+                <h4 style="padding: 8px; margin-bottom: 0px;"> Grams:</h4>
+                 <div id="grams" style="padding-left: 8px;padding-top:0px;">  </div>
+                </div>  
+            </div>
+                 
+             <div class="card mb-2" style="background-color:limegreen">
+               <div class="card-block">
+                <h4 style="padding: 8px; margin-bottom: 0px;"> Kg:</h4>
+                 <div id="kg" style="padding-left: 8px;padding-top:0px;" > </div>
+                </div>  
+            </div>
+                 
+             <div class="card " style="background-color: skyblue">
+               <div class="card-block">
+                <h4 style="padding: 8px; margin-bottom: 0px;"> Ounces:</h4>
+                 <div id="ounces" style="padding-left: 8px;padding-top:0px;"> </div>
+                </div>  
+            </div>
+                 
+                 
+                 
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+      document.getElementById('output').style.visibility="hidden";
+     var input = document.getElementById('lbsInput');
+     input.addEventListener('input',calculate);
+     function calculate(e){
+          document.getElementById('output').style.visibility="visible";
+         var lbs = e.target.value ;
+         
+         var grams = lbs*453.59237 ;
+         document.getElementById('grams').innerHTML = grams ;
+         
+          var kg = lbs*0.453592 ;
+         document.getElementById('kg').innerHTML = kg ;
+         
+          var ounces = lbs*16 ;
+         document.getElementById('ounces').innerHTML = ounces ;
+     }
+          
+      </script>
+      
+      
+  </body>
+</html>
